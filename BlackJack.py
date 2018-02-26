@@ -16,6 +16,7 @@ improvements would be:
 """
 
 import random
+from time import sleep
 
 class Hand(object):
     
@@ -106,7 +107,10 @@ class Dealer(Hand):
 
         def Play(self,deck,group=0):
             while self.Tot() in range(0,18):
+                sleep(2)
                 self.Hit(group,deck)
+                print('\n\nDealer hitting - ')
+                self.Show()
             self.Bust()
                 
 
